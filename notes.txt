@@ -1,0 +1,16 @@
+  * capture/bubbling demo: http://jsbin.com/exezex/edit?html,css,js
+  * event capture/bubbling: two ways to handle order of nested event handlers
+  * event bubbling/delegation...
+    - one advantage is that if we have a million LIs we want to do something special with when we click on them, we don't have to attach an event handler to EVERY SINGLE element (just the containing element, and specify which descendents will trigger the event). E.g. attach an event handler to a UL, then use event bubbling/delegation to ensure that any LI found during event bubbling will trigger the event.
+    - this also allows new LIs added to the page to still trigger an event. (As opposed to having to attach an event to every single LI we add to the page after loading).  
+
+  - stopPropagation (to prevent parent event from propagating)
+  - on (create another on event) for .your-turn button
+  - change triggerDemo to trigger custom your-turn event
+  - see what happens when you do not add a click event handler to mouseup demo
+
+  * To see the difference between these two events, click and drag on each button. Click events only run when the mouse is pushed down AND back up over the same element. Mouseup also only works when the mouse is released on top of the selected element.
+
+  - event.pageX and event.pageY show the X and Y coordinates of the mouse pointer relative to the top-left corner of the document
+  - mouseover/out vs. mouseenter/leave (bubbling vs. no bubbling)
+  - fix hover so that it reverts back to original image after mouse leaves element.
