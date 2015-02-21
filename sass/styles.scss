@@ -1,0 +1,166 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic|Source+Code+Pro|Montserrat:400,700);
+@import "partials/settings";
+@import "partials/foundation";
+
+@mixin code-font() {
+  font-family: $font-family-monospace;
+  background-color: rgba(255, 255, 255, .5);
+  letter-spacing: .08em;
+}
+
+body {
+  background-image: url('/images/swirl_pattern.png');
+
+  margin: 0 20px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  letter-spacing: .06em;
+}
+
+.small-12.columns {
+  border-radius: 6px;
+  margin-bottom: 20px;
+
+  header & {
+    margin-bottom: 0;
+  }
+}
+
+#currentTargetDemo {
+  background-color: rgba(243, 44, 79, 0.70);
+
+  h4 {
+    border: dotted 2px red;
+    display: block;
+  }
+}
+
+#preventDefaultDemo {
+  background-color: rgba(249, 117, 6, 0.72);
+
+  a {
+    margin-right: 5%;
+
+    &.no-default {
+      margin-right: 0;
+    }
+  }
+}
+
+#stopPropagationDemo {
+  background-color: rgba(255, 221, 51, 0.63);
+}
+
+#onDemo {
+  background-color: rgba(170, 220, 35, 0.62);
+
+  a {
+    margin-right: 5%;
+
+    &.your-turn {
+      margin-right: 0;
+    }
+  }
+}
+
+#triggerDemo {
+  background-color: rgba(8, 161, 211, 0.78);
+}
+
+#readyDemo {
+  background-color: rgba(68, 31, 247, 0.77);
+
+  ul {
+    span {
+      @include code-font();
+    }
+  }
+}
+
+#mouseEventsDemos {
+  background-color: rgba(140, 39, 249, 0.71);
+
+  a {
+    margin-right: 5%;
+
+    &.mouseup {
+      margin-right: 0;
+    }
+  }
+
+  span {
+    @include code-font;
+  }
+
+  .demo {
+    display: block;
+    margin-bottom: 10px;
+
+    &:last-child {
+      margin-bottom: 0;  
+    }
+  }
+
+  #mousemove, .hover {
+    float: left;
+    background-image: url('/images/sparkly-jake.gif');
+    background-size: 300px auto;
+    background-repeat: no-repeat;
+    width: 300px;
+    height: 168px;
+    margin-bottom: 15px;
+  }
+
+  #mousemoveXY {
+    float: left;
+    margin-left: 20px;
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  .out {
+    float: left;
+    background-color: white;
+    width: 300px;
+    height: 168px;
+    padding: 10px 20px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .in {
+    background-color: rgb(41, 126, 255);
+    width: 50%;
+    height: 50%;
+    margin: 10px auto;
+    padding: 10px 20px;
+
+  }
+
+  .enterleave {
+    background-color: rgb(255, 52, 161);
+
+    .in {
+      background-color: rgb(247, 158, 206);
+    }
+  }
+
+  .overoutCount, .enterleaveCount {
+    float: left;
+    margin-left: 20px;
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  .hover {
+    background-image: url('/images/once-upon.gif');
+  }
+
+}

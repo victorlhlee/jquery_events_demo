@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>jQuery Events Demos</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="container">
+      <header class="row">
+        <div class="small-12 columns">
+          <h2>Events</h2>
+        </div>
+        
+      </header>
+
+      <div class="row">
+        
+        <div id="currentTargetDemo" class="small-12 columns">
+            <h3>event.currentTarget</h3>
+            <h4>Click MEH (an H4)</h4>
+            <p>There are click event handlers attached to both H4 and A. <strong>event.currentTarget</strong> returns the element whose event listener triggered the event.</p>
+            <a href="#" class="button">Click Meh (an A)</a>
+        </div>
+        
+      </div>
+
+      <div class="row">
+        
+        <div id="preventDefaultDemo" class="small-12 columns">
+          <h3>event.preventDefault()</h3>
+          <p>These buttons are all A's, YO.</p>
+          <h5>Several Default Browser Actions:</h5>
+          <ul>
+            <li><strong>hyperlinks</strong> => go to URL when clicked</li>
+            <li><strong>form submit buttons</strong> => causes form to submit/page to refresh (e.g. Shopping List project)</li>
+            <li><strong>right click</strong> => the "context menu" pops up</li>
+          </ul>
+
+          <a href="http://api.jquery.com/event.preventDefault/" class="button">jQuery API</a>
+
+          <a href="http://api.jquery.com/event.preventDefault/" class="button no-default">Surprise</a>
+
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div id="stopPropagationDemo" class="small-12 columns">
+          
+          <h3>event.stopPropagation</h3>
+
+          <h4>This yellow div (parent) has an alerting click event!</h4>
+
+          <a href="#" class="button" id="child">So does this button (child).</a>
+
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div id="onDemo" class="small-12 columns">
+          
+          <h3>.on()</h3>
+
+          <a href="#" class="button greet-yo-self">GREET YO' SELF</a>
+
+          <a href="#" class="button your-turn">YOUR TURN</a>
+
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div id="triggerDemo" class="small-12 columns">
+          
+          <h3>.trigger()</h3>
+            
+          <p><strong>Note:</strong> This button actually triggers our previous example's "GREET YO' SELF" click event.</p>
+
+          <a href="#" class="button">GREET YO' SELF AGAIN</a>
+
+        </div>
+        
+      </div>
+
+      <div class="row">
+        <div id="readyDemo" class="small-12 columns">
+          
+          <h3>.ready()</h3>
+          
+          <ul>
+            <li>A page can't be manipulated until the Document Object Model (DOM) is "ready" for JS code to execute.</li>
+            <li><span>$()</span> is the shorthand for <span>$(document).ready()</span></li>
+            <li>vs. <span>$(window).load(function() { ... })</span></li>
+          </ul>
+
+        </div>
+        
+      </div>
+
+      <header class="row">
+        <div class="small-12 columns">
+          <h2>Mouse Events</h2>
+        </div>
+      </header>
+
+      <div class="row">
+        
+        <div id="mouseEventsDemos" class="small-12 columns">
+            <h3>"Click-y" Events</h3>
+            <ul>
+              <li>.mousedown()</li>
+              <li>.mouseup()</li>
+              <li>.click()</li>
+            </ul>
+
+            <!-- <p>To see the difference between these two events, click and drag on each button. Click events only run when the mouse is pushed down AND back up <strong>over the same element</strong>. Mouseup also only works when the mouse is released on top of the selected element.</p> -->
+
+            <p><strong>Note:</strong> When you set a mouseup event handler and click to test it, a click event gets triggered right after the mouseup event.</p>
+
+            <a href="#" class="button mousedown">Mouse Me Down</a>
+            <a href="#" class="button click">Click Meh</a>
+            <a href="#" class="button mouseup">Mouse Me Up</a>
+
+            <h3>"Hover-y" Events</h3>
+            <ul>
+              <li>.mousemove()</li>
+              <li>.mouseover()</li>
+              <li>.mouseout()</li>
+              <li>.mouseenter()</li>
+              <li>.mouseleave()</li>
+              <li>.hover()</li>
+            </ul>
+
+            <div class="demo clearfix">
+              <h4>.mousemove()</h4>
+              <div id="mousemove"></div>
+              <div id="mousemoveXY">
+                <p>event.pageX = <span class="pageX"> 0 </span></p>
+                <p>event.pageY = <span class="pageY"> 0 </span></p>
+              </div>
+            </div>
+          
+            <div class="demo clearfix">
+              <h4>.mouseover() & .mouseout()</h4>
+              <div class="out overout">
+                Parent Div (with event)
+                <div class="in">Child Div</div>
+              </div>
+              <div class="overoutCount">
+                <p>mouseover: <span class="mouseovertimes">0</span> times</p>
+                <p>mouseout: <span class="mouseouttimes">0</span> times</p>
+              </div>
+            </div>
+          
+            <div class="demo clearfix">
+              <h4>.mouseenter() & .mouseleave()</h4>
+              <div class="out enterleave">
+                Parent Div (with event)
+                <div class="in">Child Div</div>
+              </div>
+              <div class="enterleaveCount">
+                <p>mouseover: <span class="mouseentertimes">0</span> times</p>
+                <p>mouseout: <span class="mouseleavetimes">0</span> times</p>
+              </div>
+            </div>
+
+            <div class="demo clearfix">
+              <h4>.hover(handlerIn, handlerOut)</h4>
+              <p><span>$( selector ).hover( handlerIn, handlerOut )</span> is the shorthand for <span>$( selector ).mouseenter( handlerIn ).mouseleave( handlerOut )</span>.</p>
+              <p><strong>Note:</strong> If you only provide one handler, .hover() will only run a .mouseenter() event.</p>
+              <div class="hover"></div>
+              <div class="hoverDescription">
+                
+              </div>
+            </div>
+
+
+        </div>
+        
+      </div>
+
+    </div>
+
+    <script src="/bower_components/modernizr/modernizr.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/foundation/js/foundation.min.js"></script>
+    <script>
+    $(document).foundation();
+    </script>
+    <script src="js/app.js"></script>
+</body>
+</html>
