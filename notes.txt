@@ -2,6 +2,8 @@
   * event capture/bubbling: two ways to handle order of nested event handlers
   * event bubbling/delegation...
     - one advantage is that if we have a million LIs we want to do something special with when we click on them, we don't have to attach an event handler to EVERY SINGLE element (just the containing element, and specify which descendents will trigger the event). E.g. attach an event handler to a UL, then use event bubbling/delegation to ensure that any LI found during event bubbling will trigger the event.
+    * why .on() is important!!!
+      allows event delegation (vs. those other mouse events, which don't let you specify a selector)
     - this also allows new LIs added to the page to still trigger an event. (As opposed to having to attach an event to every single LI we add to the page after loading).  
 
   - stopPropagation (to prevent parent event from propagating)
