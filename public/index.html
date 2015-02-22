@@ -38,9 +38,9 @@
             <li><strong>right click</strong> => the "context menu" pops up</li>
           </ul>
 
-          <a href="http://api.jquery.com/event.preventDefault/" class="button">jQuery API</a>
+          <a href="http://api.jquery.com/event.preventDefault/" target="_blank" class="button">jQuery API</a>
 
-          <a href="http://api.jquery.com/event.preventDefault/" class="button no-default">Surprise</a>
+          <a href="http://api.jquery.com/event.preventDefault/" target="blank" class="button no-default">Surprise</a>
 
         </div>
         
@@ -92,8 +92,8 @@
           
           <ul>
             <li>A page can't be manipulated until the Document Object Model (DOM) is "ready" for JS code to execute.</li>
-            <li><span>$()</span> is the shorthand for <span>$(document).ready()</span></li>
-            <li>vs. <span>$(window).load(function() { ... })</span></li>
+            <li><span>$(function() {})</span> is the shorthand for <span>$(document).ready(function() {})</span></li>
+            <li>vs. <span>$(window).load(function() { ... })</span> (fires an event only after the page is fully loaded, including all frames, objects, and images) </li>
           </ul>
 
         </div>
