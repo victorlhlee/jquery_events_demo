@@ -59,7 +59,7 @@ $(function() {
 /*
   Create your own .on event handler here (target the "your-turn" button class)!
  */
-
+ $('.your-turn').on('click', {salutation : 'wat?', name : 'hey bob'}, greet);
 
 
   $('#triggerDemo a').click(function(event) {
@@ -98,8 +98,9 @@ $(function() {
  */
 
   $('#mousemove').mousemove(function(event) {
-    $('.pageX').text(event.pageX);
-    $('.pageY').text(event.pageY);
+    console.log(event);
+    $('.pageX').text(event.x);
+    $('.pageY').text(event.y);
   });
 
   var nTimesOver = 0;
@@ -129,8 +130,8 @@ $(function() {
   //What happens when we uncomment the bottom code? .hover() accepts up to two handlers (handlerIn and handlerOut, respectively).
   $('.hover').hover(function() {
     $(this).css({"background-image" : "url('/images/the-end.gif')"});
-  // }, function() {
-  //   $(this).css({"background-image" : "url('/images/once-upon.gif')"});
+  }, function() {
+    $(this).css({"background-image" : "url('/images/once-upon.gif')"});
   });
 
 });
